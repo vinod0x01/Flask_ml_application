@@ -124,8 +124,11 @@ def create_user():
 #logout
 @app.route("/logout_")
 def logout():
-    auth.current_user=None
+    global dict_of_items, user, info, auth
+    auth.current_user = None
     dict_of_items = None
+    user = None
+    info = None
     return redirect(url_for("index", msg="You have been logged out"))
 
 #route for selector
@@ -233,6 +236,4 @@ def pay():
         return redirect(url_for('selector', msg='payment failed please try again'))
 
 if __name__ == "__main__":
-    app.debug = True
     app.run()
-    app.run(debug=True)
