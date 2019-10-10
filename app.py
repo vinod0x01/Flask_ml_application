@@ -1,7 +1,6 @@
 #importing libraries
 import pyrebase
 from flask import *
-import json
 import prediction_engine.Stock_Direction as sd
 #importing payment library
 import stripe
